@@ -19,6 +19,7 @@ public class ServerNetworkHandlerME extends ServerNetworkHandlerAPI {
         PayloadTypeRegistry.playS2C().register(ShapingAnvilRecipePacket.ID, ShapingAnvilRecipePacket.CODEC);
         PayloadTypeRegistry.playS2C().register(ArtisanRecipePacket.ID, ArtisanRecipePacket.CODEC);
         PayloadTypeRegistry.playS2C().register(PacketOpenMapScreen.ID, PacketOpenMapScreen.CODEC);
+        PayloadTypeRegistry.playS2C().register(PacketOpenGroomingScreen.ID, PacketOpenGroomingScreen.CODEC);
 
         // REGISTRY : Client to server
         PayloadTypeRegistry.playC2S().register(PacketStructureManagerRespawnEntities.ID, PacketStructureManagerRespawnEntities.CODEC);
@@ -42,6 +43,7 @@ public class ServerNetworkHandlerME extends ServerNetworkHandlerAPI {
         PayloadTypeRegistry.playC2S().register(ArtisanIndexPacket.ID, ArtisanIndexPacket.CODEC);
         PayloadTypeRegistry.playC2S().register(ArtisanTableTabPacket.ID, ArtisanTableTabPacket.CODEC);
         PayloadTypeRegistry.playC2S().register(HoodStateTogglePacket.ID, PacketCodecs.codec(Codec.unit(new HoodStateTogglePacket())));
+        PayloadTypeRegistry.playC2S().register(PacketSetBeard.ID, PacketSetBeard.CODEC);
 
         // Application [SERVER SIDE]
         ServerPlayNetworking.registerGlobalReceiver(PacketStructureManagerRespawnEntities.ID, wrapServerHandler(connection, PacketStructureManagerRespawnEntities::process));
@@ -65,5 +67,6 @@ public class ServerNetworkHandlerME extends ServerNetworkHandlerAPI {
         ServerPlayNetworking.registerGlobalReceiver(ArtisanIndexPacket.ID, wrapServerHandler(connection, ArtisanIndexPacket::process));
         ServerPlayNetworking.registerGlobalReceiver(ArtisanTableTabPacket.ID, wrapServerHandler(connection, ArtisanTableTabPacket::process));
         ServerPlayNetworking.registerGlobalReceiver(HoodStateTogglePacket.ID, wrapServerHandler(connection, HoodStateTogglePacket::process));
+        ServerPlayNetworking.registerGlobalReceiver(PacketSetBeard.ID, wrapServerHandler(connection, PacketSetBeard::process));
     }
 }

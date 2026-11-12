@@ -1027,6 +1027,16 @@ public class RecipeProvider extends FabricRecipeProvider {
                 createMetalsRecipe(exporter, ResourceItemsME.EDHEL_STEEL_NUGGET, ResourceItemsME.EDHEL_STEEL_INGOT, BlockRegistryME.EDHEL_STEEL_BLOCK);
                 createMetalsRecipe(exporter, ResourceItemsME.KHAZAD_STEEL_NUGGET, ResourceItemsME.KHAZAD_STEEL_INGOT, BlockRegistryME.KHAZAD_STEEL_BLOCK);
 
+                // The Dwarven Grooming Kit: shears, a bone comb, rings of gold and a leather roll to keep them in.
+                ShapelessRecipeJsonBuilder.create(this.itemLookup, RecipeCategory.TOOLS, ResourceItemsME.DWARVEN_GROOMING_KIT)
+                        .input(Items.SHEARS)
+                        .input(Items.BONE)
+                        .input(Items.GOLD_NUGGET)
+                        .input(Items.GOLD_NUGGET)
+                        .input(Items.LEATHER)
+                        .criterion(hasItem(Items.SHEARS), conditionsFromItem(Items.SHEARS))
+                        .offerTo(exporter);
+
                 ShapelessRecipeJsonBuilder.create(this.itemLookup, RecipeCategory.MISC, ResourceItemsME.ADAMANT, 9)
                         .input(BlockRegistryME.ADAMANT_BLOCK)
                         .criterion(hasItem(BlockRegistryME.ADAMANT_BLOCK),

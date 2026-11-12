@@ -2,6 +2,7 @@ package net.sevenstars.middleearth.resources.datas.races;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.sevenstars.middleearth.entity.beard.PlayerBeard;
 import net.sevenstars.middleearth.resources.datas.common.RaceType;
 import net.sevenstars.middleearth.resources.datas.attributes.AttributePool;
 import net.sevenstars.middleearth.resources.persistent_datas.PlayerDataService;
@@ -24,6 +25,10 @@ public class RaceUtil {
         // [SET]
         if(raceExists){
             PlayerDataService.setRace(player, player.getWorld(), race.getId());
+        }
+        // Only dwarves keep the beard chosen with the Dwarven Grooming Kit.
+        if(!PlayerBeard.canGrow(player)){
+            player.removeAttached(PlayerBeard.BEARD);
         }
 
         if(shouldHeal)

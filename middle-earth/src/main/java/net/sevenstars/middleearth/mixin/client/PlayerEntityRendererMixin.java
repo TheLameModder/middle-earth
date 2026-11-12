@@ -12,6 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 import net.sevenstars.middleearth.MiddleEarth;
 import net.sevenstars.middleearth.client.renderer.ArmedEntityRenderStateAccess;
+import net.sevenstars.middleearth.client.renderer.player.BeardFeatureRenderer;
 import net.sevenstars.middleearth.entity.spider.EnwebbedFeatureRenderer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -29,5 +30,6 @@ public abstract class PlayerEntityRendererMixin extends LivingEntityRenderer<Abs
     public <S extends BipedEntityRenderState, M extends BipedEntityModel<S>>
     void PlayerEntityRenderer(EntityRendererFactory.Context ctx, boolean slim, CallbackInfo ci) {
         this.addFeature(new EnwebbedFeatureRenderer<>(this, ctx.getEntityModels(), ctx.getEquipmentRenderer()));
+        this.addFeature(new BeardFeatureRenderer(this, ctx.getEntityModels()));
     }
 }

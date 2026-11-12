@@ -127,6 +127,7 @@ public class MiddleEarth implements ModInitializer {
 		CustomWorldGeneration.generateModWorldGen();
 		LootModifiers.modifyLootTables();
 		InscriptionWordBank.addWordsToBank();
+		net.sevenstars.middleearth.entity.beard.PlayerBeard.register();
 
 		// Dynamic Data
         DynamicRegistriesME.register();

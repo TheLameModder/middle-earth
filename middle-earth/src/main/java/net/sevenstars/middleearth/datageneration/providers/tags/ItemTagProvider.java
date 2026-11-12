@@ -277,6 +277,10 @@ public class ItemTagProvider extends FabricTagProvider.ItemTagProvider {
         // HIDE Beards
         characterHideBeard.add(EquipmentItemsME.CLOSED_MAIL_COIF);
         characterHideBeard.add(EquipmentItemsME.KETTLE_HAT_WITH_CLOSED_COIF);
+        characterHideBeard.add(EquipmentItemsME.MORDOR_GREAT_HELMET);
+        characterHideBeard.add(EquipmentItemsME.RUSTED_MORDOR_GREAT_HELMET);
+        characterHideBeard.add(EquipmentItemsME.BLACK_URUK_FACE_PLATE_HELMET);
+        characterHideBeard.add(EquipmentItemsME.BEEKEEPER_MASK);
 
         for (OreStoneSetRegistryME.OreRockSet set : OreStoneSetRegistryME.sets) {
             if(set.coal_ore() != null) {

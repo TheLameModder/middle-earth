@@ -45,6 +45,9 @@ public class ResourceItemsME {
     public static final Item PLAYER_BOOK = registerItem("player_book",
             PlayerBookItem::new, new Item.Settings().maxCount(1));
 
+    public static final Item DWARVEN_GROOMING_KIT = registerItem("dwarven_grooming_kit",
+            DwarvenGroomingKitItem::new, new Item.Settings().maxCount(1));
+
     public static final Item REINFORCED_BARREL = registerItem("reinforced_barrel",
             (settings) -> {
                 return new BoatItem(EntitiesME.REINFORCED_BARREL, settings);
